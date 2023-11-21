@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #define EXITSTR "ext"
+#define INPUTSIZE 4
 
 char checkWin();
 int getEmptySpaces();
@@ -17,7 +18,7 @@ char gameboard[3][3] = { {' ', ' ', ' '},
 
 
 int main() {
-    char input[4];
+    char input[INPUTSIZE];
     char turn = 'X';
     char winner;
     printf("\nTic-Tac-Toe\n\n\ttype in \"ext\" to exit at any time\n\n");
@@ -26,7 +27,7 @@ int main() {
         printBoard();
 
         printf("\nPlayer %c's turn. Enter a position (1-1 to 3-3): ", turn);
-        fgets(input, 4, stdin);
+        fgets(input, INPUTSIZE, stdin);
         getchar(); //clears \n input buffer
 
         if(strncmp(input, EXITSTR, 3) == 0) { break; } //check if ext was typed
