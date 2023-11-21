@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define EXITSTR "ext"
+
 char checkWin();
 int getEmptySpaces();
 void printBoard();
@@ -16,7 +18,6 @@ char gameboard[3][3] = { {' ', ' ', ' '},
 
 int main() {
     char input[4];
-    const char exit[4] = "ext";
     char turn = 'X';
     char winner;
     printf("\nTic-Tac-Toe\n\n\ttype in \"ext\" to exit at any time\n\n");
@@ -28,7 +29,7 @@ int main() {
         fgets(input, 4, stdin);
         getchar(); //clears \n input buffer
 
-        if(strncmp(input, exit, 3) == 0) { break; } //check if ext was typed
+        if(strncmp(input, EXITSTR, 3) == 0) { break; } //check if ext was typed
 
         //if input is invalid exit program
         if(processInput(input, turn) == 1) { break; }
