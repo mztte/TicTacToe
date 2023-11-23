@@ -1,4 +1,4 @@
-#ignore .DS_store
+#gitignore files
 .DS_Store
-#ignore .vscode/settings.json
 .vscode/
+main
